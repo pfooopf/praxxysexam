@@ -46,6 +46,9 @@ defineProps({
                                 Description
                             </th>
                             <th scope="col" class="px-6 py-3">
+                                Created At
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 Action
                             </th>
                         </tr>
@@ -67,6 +70,9 @@ defineProps({
                             </td>
                             <td class="px-6 py-4">
                                 {{ product.description }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ new Date(product.created_at).toLocaleString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true }) }}
                             </td>
                             <td class="px-6 py-4 space-x-2">
                                 <Link :href="route('products.edit',product.id)"><PrimaryButton>Edit</PrimaryButton></Link>
